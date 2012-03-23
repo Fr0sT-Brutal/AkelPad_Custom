@@ -1,0 +1,39 @@
+Some custom stuff for AkelPad text editor.
+
+1) Files for Coder plugin
+as.coder - ActiveScript
+pascal.coder - modified Pascal/Delphi file
+	* "Words" section reworked, some keywords added
+	* REGION's are foldable (note that only REGION's with spaces before closing bracket are supported: {$REGION} won't work but {$REGION } and {$REGION 'comment'} will)
+	
+2) Automated resource replacer
+Some things in AkelPad could only be modified via resource editing. But then you lose all your changes on every upgrade. Resource replacer makes it possible to return your modified resources in a couple of clicks.
+
+	1. Launch \ResHacker\ResHacker.exe application (or any other resource editor) and modify resources as you wish
+	2. Extract modified resources as *.res files into folder where updateres.bat is located
+	3. Add command to menu or toolbar:
+		"Resource replacer" Exec('%a\AkelFiles\Custom\updateres.bat "%a"')
+	4. After AkelPad upgrade, execute this command (it will ask you to close all AkelPad instances BUT WILL NOT CHECK WHETHER YOU DID THAT)
+
+P.S. ReplaceDlg.res is a modified Replace dialog with Find next, Replace, Replace all buttons reordered and Replace all button made default (this enables fast replacement scheme "input From -> input To -> press Enter" which is MUCH more typical to this dialog than Find next or single Replace).
+
+============================================
+
+Всякая всячина для редактора AkelPad
+
+1) Файлы подсветкт для плагина Coder
+as.coder - ActiveScript
+pascal.coder - изменённый файл для Pascal/Delphi
+	* Секция "Words" переделана, добавлены несколько ключевых слов
+	* Секции REGION сворачиваемы (работает только для секция с пробелом перед закрывающей фигурной скобкой: {$REGION} не сработает, {$REGION } и {$REGION 'comment'} сработают)
+	
+2) Автоматический заменитель ресурсов
+Некоторые вещи в AkelPad можно заменить только через редактирование ресурсов. Однако при установке новой версии все изменения потеряются. Заменитель ресурсов делает возможным установку модифицированных версий за пару кликов.
+
+	1. Запустите \ResHacker\ResHacker.exe (или любой другой редактор ресурсов) и измените ресурсы, как вам угодно
+	2. Извлеките модифицированные ресурсы в виде *.res файлов в папку рядом с updateres.bat
+	3. Добавьте команду в меню или панель инструментов:
+		"Заменитель ресурсов" Exec('%a\AkelFiles\Custom\updateres.bat "%a"')
+	4. После обновления на новую версию AkelPad upgrade, запустите эту команду (она попросит закрыть все копии AkelPad, НО НЕ СТАНЕТ ПРОВЕРЯТЬ, СДЕЛАЛИ ЛИ ВЫ ЭТО)
+
+P.S. ReplaceDlg.res - модифицированный диалог замены текста с измененным порядком кнопок Найти далее, Заменить и Заменить всё, также кнопка Заменить всё сделана дефолтной (что даёт возможность быстрой замены по схеме "ввести Что -> ввести Чем -> нажать Enter", которая используется НАМНОГО чаще, чем Найти далее или Заменить).
