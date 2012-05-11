@@ -1,13 +1,20 @@
-@ECHO OFF
+::@ECHO OFF
 ECHO *** AkelPad resource replacer ***
+
+IF "%1%"=="" (
+	ECHO Parameter - path to AkelPad.exe - required
+	PAUSE
+	EXIT /B
+)
+
 ECHO Please close all AkelPad instances launched from %1%
 PAUSE
 
 SET AkelDir=%~1%
-SET ScriptDir=%~dp0%
-FOR /F %%F IN ("%ScriptDir%\*.res") DO (
+SET CurDir=%~dp0%
+FOR /F %%F IN ("%CurDir%*.res") DO (
 	ECHO Replacing %%~nF...
-	CALL "%ScriptDir%\ResHacker\ResHacker.exe" -modify "%AkelDir%\AkelPad.exe", "%AkelDir%\AkelPad.exe", "%%F" , , ,
+	CALL "%CurDir%ResHacker\ResHacker.exe" -modify "%AkelDir%\AkelPad.exe", "%AkelDir%\AkelPad.exe", "%%~dpnxF", , ,
 )
 
 
